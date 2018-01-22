@@ -95,10 +95,8 @@ void decode(int code)
 void translate(const std::string &sentence)
 {
     std::locale loc;
-    
-        
-    
     int code;
+    
     for(int i = 0; i < sentence.length(); i++)
     {
         code = letterToMorse(std::tolower(sentence[i],loc));
