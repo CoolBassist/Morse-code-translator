@@ -11,6 +11,7 @@ int main()
     std::string string;
     getline(std::cin,string);
     translate(string);
+    std::cout << std::endl;
 }
 
 int letterToMorse(char letter)
