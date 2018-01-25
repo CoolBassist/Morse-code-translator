@@ -183,8 +183,8 @@ void codeToMorse(int code)
     
     int currentNumber = 1;
     
-    if(code==0){std::cout << "/ "; return;}
-    if(code==23){std::cout << "? "; return;}
+    if(code==0){std::cout << "/"; return;}
+    if(code==23){std::cout << "?"; return;}
     
     //std::cout << "code: " << code << std::endl;
     
