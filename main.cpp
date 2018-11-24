@@ -12,7 +12,7 @@
 int main() {
     
     Phrase phrase;
-    phrase.setPhrase("hello I am joe ehhe i");
+        phrase.setPhrase("hello I am Coolbassist");
     std::cout << phrase.translate() << std::endl;
     return 0;
 }
