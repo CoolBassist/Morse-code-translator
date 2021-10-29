@@ -1,52 +1,39 @@
 //
-//  phrase.cpp
+//  Phrase.cpp
 //  Morsecode translator
 //
-//  Created by Joe Errey on 24/11/2018.
-//  Copyright © 2018 Joe Errey. All rights reserved.
+//  Created by Joe Errey on 24/11/2018. Updated on 29/10/2021
 //
 
 #include "phrase.hpp"
 #include <iostream>
+#include <algorithm>
 #include <string>
 
-void Phrase::setPhrase(std::string new_phrase)
+Phrase::Phrase() {}
+
+Phrase::Phrase(std::string phrase)
 {
-    std::transform(new_phrase.begin(), new_phrase.end(), new_phrase.begin(), ::tolower);
-    phrase = new_phrase;
+    setPhrase(phrase);
 }
 
-bool Phrase::isMorse(char character)
+void Phrase::setPhrase(std::string phrase)
 {
-    return (!isalpha(character));
+    std::transform(phrase.begin(), phrase.end(), phrase.begin(), ::tolower);
+    this->phrase = phrase;
+    std::cout << "Phrase set." << std::endl;
 }
 
 std::string Phrase::translate()
 {
     std::string output = "";
-    
-    if(isMorse(phrase[0]))
-    {
+
+    if (isalpha(phrase[0])) //  If the first character is an alpha character.
+        for (char c : phrase)
+            output += (c==' ') ? "/ " : morse[c - 'a'] + " ";
+    else {
         //TODO: do morse to alpha
-    }else{
-        for(int i = 0; i < phrase.size(); i++)
-        {
-            if(phrase[i] == ' ')
-            {
-                output += "/ ";
-                continue;
-            }
-            
-            for(int j = 0; j < 26; j++)
-            {
-                if(phrase[i] == alpha[j])
-                {
-                    output += morse[j] + " ";
-                    break;
-                }
-            }
-        }
     }
-    
+
     return output;
 }
