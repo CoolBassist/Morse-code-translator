@@ -30,7 +30,7 @@ std::string Phrase::translate()
 
     if (isalpha(phrase[0])) //  If the first character is an alpha character.
         for (char c : phrase)
-            output += (c==' ') ? "/ " : morse[c - 'a'] + " ";
+            output += (c == ' ') ? "/ " : morse[c - 'a'] + " ";
     else {
         //TODO: do morse to alpha
     }

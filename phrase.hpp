@@ -1,12 +1,6 @@
-//
-//  Phrase.hpp
-//  Morsecode translator
-//
-//  Created by Joe Errey on 24/11/2018. Updated on 29/10/2021
-//
-
-#ifndef Phrase_h
-#define Phrase_h
+#pragma once
+#ifndef phrase_h
+#define phrase_h
 
 #include <iostream>
 #include <string>
